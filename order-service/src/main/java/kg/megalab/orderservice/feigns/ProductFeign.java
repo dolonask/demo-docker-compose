@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 
-@FeignClient(url = "http://product-service:8081/")
+@FeignClient(name = "product-service", url = "http://localhost:8081")
 public interface ProductFeign {
-    @PostMapping("/api/products/check")
+    @PostMapping("/api/products/checks")
     List<ProductsCheckResponseDto> checkProducts(@RequestBody List<ProductsCheckRequestDto> productsCheckRequestDtos);
 }
